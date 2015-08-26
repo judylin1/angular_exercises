@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app='unit5'>
+  <head>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js'></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <script type='text/javascript' src='unit5.js'></script>
+    <link href='style.css' type='text/css' rel='stylesheet'>
+    <title></title>
+  </head>
+  <body>
+    <h1>Name 3 Built-In Directives Used So Far Exercise:</h1>
+    <ul>
+        <li>ng-app</li>
+        <li>ng-init</li>
+        <li>ng-model</li>
+    </ul>
+
+    <h1>Ng-Repeat Exercise</h1>
+    <div ng-controller='ngRepeat'>
+      <ul>
+        <li ng-repeat="name in names">{{name}}</li>
+      </ul>
+    </div>
+
+    <h1>Symbols Exercise</h1>
+    <div ng-controller='symbols'>
+        <ul ng-repeat="symbol in symbols">
+        <li translate>{{symbol}}</li>
+      </ul>
+    </div>
+
+    <h1>Duplication Exercise</h1>
+    <div ng-controller='numbers'>
+      <ul>
+        <li ng-repeat="number in numbers track by $index">
+          {{number}}
+         </li>
+      </ul>
+    </div>
+
+    <h1>Keys Iteration Exercise</h1>
+    <div ng-controller='keys'>
+      <ul>
+        <li ng-repeat="(key, value) in keys">
+          {{key}}: {{value}}
+         </li>
+      </ul>
+    </div>
+
+    <h1>Show/Hide Exercise</h1>
+      <div ng-show="3 + 4 == 5">
+        3 + 4 isn't 5, don't show
+      </div>
+
+      <div ng-show="3 + 4 == 7">
+        3 + 4 is 7, do show
+      </div>
+
+      <div ng-hide="3 + 4 == 5">
+          3 + 4 isn't 5, don't hide
+      </div>
+
+      <div ng-hide="3 + 4 == 7">
+        3 + 4 is 7, do hide
+      </div>
+
+      <h1>Password Validator Exercise</h1>
+      <h3>Sign up page</h3>
+      <input type="password" ng-model="password"></input>
+        <p ng-class="{red: password.length < 6, green: password.length >= 6}">Your password is {{password.length}} character(s).</p>
+        <p ng-show="password.length < 6">Password is invalid!</p>
+      <input type="submit" ng-show="password.length >= 6" value='Sign Up!'></input>
+
+      <h1>Highlight Exercise</h1>
+      <div ng-class="{highlight: 4 + 4 == 8}"> 4 + 4 = 8 </div>
+      <div ng-class="{highlight: 4 + 4 == 10}"> 4 + 4 = 10 </div>
+
+      <h1>Camera Shop</h1>
+      <div ng-controller='cameras'>
+      <select ng-model="q">
+        <option value="rating">Rating</option>
+        <option value="price">Price</option>
+      </select>
+      <div ng-repeat="camera in cameras | orderBy: q">
+        <div>
+          <h3>{{camera.title}}</h3>
+          <p ng-class="{orange: camera.onSale}">Price: {{camera.price | currency}}</p>
+          <p class="orange" ng-show="camera.onSale">ON SALE!!!</p>
+          <p>Rating: {{camera.rating}}</p>
+          <img class="photo" ng-src="{{camera.image}}">
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

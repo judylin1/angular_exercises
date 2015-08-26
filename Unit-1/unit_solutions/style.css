@@ -1,0 +1,72 @@
+.highlight {
+  background-color: yellow;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.orange {
+  color: orange;
+}
+
+.photo {
+  width: 5%;
+}
+
+.player1 {
+  display: inline-block;
+  height: 400px;
+  width:400px;
+  background-color: blue;
+  color: white;
+  padding: 20px;
+}
+
+.player2 {
+  display: inline-block;
+  height: 400px;
+  width:400px;
+  background-color: blue;
+  color: white;
+  padding: 20px;
+}
+
+.score1, .score2 {
+  font-size: 250px;
+}
+
+.reset {
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+.redback {
+  background-color: red;
+}
+.greenback {
+  background-color: green;
+}
+
+.add {
+  background-color: green;
+  color: white;
+}
+
+th, tr {
+  width: 250px;
+  text-align: left;
+  border-bottom: 1px solid;
+}
+
+tr:nth-child(even) {
+  background: #CCC;
+}

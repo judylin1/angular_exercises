@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js'></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <title></title>
+  </head>
+  <body>
+    <h1>Unit 1</h1>
+    {{1+6}}
+    <br>
+
+    <h1>Unit 2</h1>
+    <input type='text' placeholder="What is your name" ng-model='name'></input>
+    <h4 ng-init='name='BoJack''>My name is: {{name}}</h4>
+    <h2>Dropdown</h2>
+    <select ng-model='selection'>
+      <option value='dogs'>Dogs</option>
+      <option value='cats'>Cats</option>
+      <option value='Dogs and Cats'>Dogs and Cats</option>
+      <option value='Neither'>Neither</option>
+    </select>
+    <h3>I love {{selection}} <3</h3>
+
+    <h1>Unit 3</h1>
+    1+2 = {{1+2}}
+    <br>
+    My name is {{"BoJack" + " Horseman"}}
+    <br>
+    The array [99,43,22] is {{ [99,43,22].length }} items long.
+    <p>
+    {{3.14159265359 | currency}}
+    <h4> Euro Sign Exercise:</h4>
+    {{3.14159265359 | currency: "€"}}
+    <h4> Uppercase/Lowercase Exercise:</h4>
+    <input type='text' ng-model='text'></input>
+    <br>
+    Yelling: {{text | uppercase}}
+    <br>
+    Whispering: {{text | lowercase}}
+    <h4>Number Rounding Exercise:</h4>
+    {{3.14159265359 | number:3}}
+    <br>
+    {{3.14159265359 | number:6}}
+    <br>
+    {{3.14159265359 | number:1}}
+    <h4> Dropdown Rounding Exercise:</h4>
+    How many digits do you want pi to round to?
+    <select ng-model='pi'>
+      <option value='1'>1</option>
+      <option value='2'>2</option>
+      <option value='3'>3</option>
+      <option value='4'>4</option>
+      <option value='5'>5</option>
+      <option value='6'>6</option>
+      <option value='7'>7</option>
+      <option value='8'>8</option>
+      <option value='9'>9</option>
+      <option value='10'>10</option>
+      <option value='11'>11</option>
+    </select>
+    <br>Here you go! The first {{pi}} <ng-pluralize count="pi" when="{'1': 'digit ', 'other': 'digits '}"></ng-pluralize>of pi!
+    <br>{{3.14159265359 | number: pi}}
+    <h4>Super Useful Tip Calculator:</h4>
+    How much did your meal cost?
+    <input type='number' ng-model='price'></input>
+    <br>How much do you want to tip?
+    <select ng-model='tip'>
+      <option value='.10'>10%</option>
+      <option value='.15'>15%</option>
+      <option value='.20'>20%</option>
+    </select>
+    <br>Subtotal: {{price | currency}}
+    <br>Tip: {{price * tip | currency}}
+    <h4>Expression Exercise</h4>
+    Scope Object.
+  </body>
+</html>

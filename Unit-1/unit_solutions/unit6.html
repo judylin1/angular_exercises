@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app='unit5'>
+  <head>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js'></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <script type='text/javascript' src='unit6.js'></script>
+    <link href='style.css' type='text/css' rel='stylesheet'>
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Random Number Picker Exercise</h1>
+    <div ng-controller='number'>
+      <h3>The number is: {{number}}</h3>
+      <button ng-click="pickRandomNumber()">Pick Random Number</button>
+    </div>
+
+    <h1>Reverse Text Exercise</h1>
+    <h3>Word Reverser</h3>
+    <div ng-controller='reverse'>
+      <input type="text" ng-model="word">
+      <p>Your word is: {{word}}</p>
+      <button ng-click="reverseWord(word)">Reverse!</button>
+    </div>
+
+    <h1>Ping Pong Score Keeper Exercise</h1>
+    <div class='center' ng-controller='pingPong'>
+      <div class="player1" ng-class="{redback: score2 >= 11, greenback: score1 >= 11}" ng-click='addScore1(score1)'>
+        <h1>Player 1</h1>
+        <div class="score1">
+          {{score1}}
+        </div>
+      </div>
+      <div class="player2" ng-class="{redback: score1 >= 11, greenback: score2 >= 11}" ng-click='addScore2(score2)'>
+        <h1>Player 2</h1>
+        <div class="score2">
+          {{score2}}
+        </div>
+      </div>
+      <br><button class="reset" ng-click='reset()'>Reset</button>
+    </div>
+
+    <h1>Contact List Exercise</h1>
+    <div ng-controller="contacts">
+      <label for="name">Name</label>
+      <input type="text" id="name" ng-model="name">
+      <label for="email">Email</label>
+      <input type="text" id="email" ng-model="email">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" ng-model="phone">
+      <button class='add' ng-click='addContact(name, email, phone)'>Add Contact</button>
+      <br><br>
+      <label for="Search">Search</label>
+      <input type="text" id="search" ng-model="search">
+      <br><br>
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </thead>
+          <tr ng-repeat="contact in contacts | filter:search" ng-mouseover='show()'>
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phone}}</td>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
