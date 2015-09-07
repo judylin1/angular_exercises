@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app='unit3'>
+  <head>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js'></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+    <script type='text/javascript' src='js/controllers.js'></script>
+    <script type='text/javascript' src='js/filters.js'></script>
+    <base href="/#/">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <h1>Kebab It!</h1>
+      <form ng-submit="kebabeIt()">
+        <input type="text" ng-model='kebabeInput' placeholder='Kebab This'></input>
+      </form>
+      {{kebabeInput | kebab}}
+    </div>
+
+    <div>
+      <h1>Camel It!</h1>
+      <form ng-submit='camelIt()'>
+        <input type='text' ng-model='camelInput' placeholder="Camel This"></input>
+      </form>
+      {{camelInput | camel}}
+    </div>
+
+    <div>
+      <h1>Pig Latin It!</h1>
+      <form ng-submit='pigIt()'>
+        <input type='text' ng-model='pigInput' placeholder='Pig Latin This'></input>
+      </form>
+      {{pigInput | pig}}
+    </div>
+
+    <div>
+      <h1>Redact It!</h1>
+      <form ng-submit='redactIt()'>
+        <input type='text', ng-model='redactInput' placeholder="Redact This"></input>
+      </form>
+      {{redactInput | redact}}
+    </div>
+  </body>
+</html>

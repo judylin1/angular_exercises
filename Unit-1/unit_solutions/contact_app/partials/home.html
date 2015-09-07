@@ -1,0 +1,49 @@
+<div class='container'>
+  <form class="form-inline">
+    <div class="form-group">
+      <strong>Name</strong>
+      <input type="text" ng-model="newContact.name" class="form-control" autofocus>
+    </div>
+    <div class="form-group">
+      <strong>Email</strong>
+      <input type="text" ng-model="newContact.email" class="form-control">
+    </div>
+     <div class="form-group">
+      <strong>Phone</strong>
+      <input type="text" ng-model="newContact.phone" class="form-control">
+    </div>
+    <button ng-click="AddContact(newContact)">Add Contact</button>
+  </form>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <form class="form-inline">
+        <strong>Search By Name:</strong>
+        <input id='stretch' ng-model="search.name" class="form-control">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class='container'>
+  <table>
+    <thead>
+      <tr>
+      	<th>Name</th>
+      	<th>Email</th>
+      	<th>Phone</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(key, contact) in contactData | filter:search:strict ">
+      	<td><a ng-href="#/show/{{$index}}" ng-click="FindContact($index); findGiph(contact.name)">{{contact.name}}</a></td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.phone}}</td>
+        <td><button class='left' ng-click="RemoveContact($index)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

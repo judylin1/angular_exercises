@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '[-g]', 'minifier' ]
+2 info using npm@2.13.5
+3 info using node@v0.12.2
+4 verbose node symlink /usr/local/bin/node
+5 verbose config Skipping project config: /Users/Judy/.npmrc. (matches userconfig)
+6 verbose install initial load of /Users/Judy/package.json
+7 verbose installManyTop reading scoped package data from /Users/Judy/node_modules/bcryptjs/package.json
+8 verbose installManyTop reading scoped package data from /Users/Judy/node_modules/dotenv/package.json
+9 verbose installManyTop reading scoped package data from /Users/Judy/node_modules/mongoose/package.json
+10 info package.json bcryptjs@2.1.0 No license field.
+11 verbose readDependencies loading dependencies from /Users/Judy/package.json
+12 silly cache add args [ '[-g]', null ]
+13 verbose cache add spec [-g]
+14 silly cache add args [ 'minifier', null ]
+15 verbose cache add spec minifier
+16 silly cache add parsed spec { raw: '[-g]',
+16 silly cache add   scope: null,
+16 silly cache add   name: null,
+16 silly cache add   rawSpec: '[-g]',
+16 silly cache add   spec: '/Users/Judy/workspace/angular_exercises/Unit-2/unit_solutions/Unit 5/[-g]',
+16 silly cache add   type: 'local' }
+17 silly cache add parsed spec { raw: 'minifier',
+17 silly cache add   scope: null,
+17 silly cache add   name: 'minifier',
+17 silly cache add   rawSpec: '',
+17 silly cache add   spec: '*',
+17 silly cache add   type: 'range' }
+18 silly addNamed minifier@*
+19 verbose addNamed "*" is a valid semver range for minifier
+20 silly addNameRange { name: 'minifier', range: '*', hasData: false }
+21 silly mapToRegistry name minifier
+22 silly mapToRegistry using default registry
+23 silly mapToRegistry registry https://registry.npmjs.org/
+24 silly mapToRegistry uri https://registry.npmjs.org/minifier
+25 verbose addNameRange registry:https://registry.npmjs.org/minifier not in flight; fetching
+26 error addLocal Could not install /Users/Judy/workspace/angular_exercises/Unit-2/unit_solutions/Unit 5/[-g]
+27 verbose request uri https://registry.npmjs.org/minifier
+28 verbose request no auth needed
+29 info attempt registry request try #1 at 13:58:42
+30 verbose request id 1f3eca26f05e2f02
+31 http request GET https://registry.npmjs.org/minifier
+32 http 200 https://registry.npmjs.org/minifier
+33 silly get cb [ 200,
+33 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+33 silly get     etag: '"16XZ0N9EUDU9T2T06HDCAUJDR"',
+33 silly get     'content-type': 'application/json',
+33 silly get     'cache-control': 'max-age=60',
+33 silly get     'content-length': '20877',
+33 silly get     'accept-ranges': 'bytes',
+33 silly get     date: 'Sat, 05 Sep 2015 19:58:42 GMT',
+33 silly get     via: '1.1 varnish',
+33 silly get     age: '0',
+33 silly get     connection: 'keep-alive',
+33 silly get     'x-served-by': 'cache-ord1734-ORD',
+33 silly get     'x-cache': 'MISS',
+33 silly get     'x-cache-hits': '0',
+33 silly get     'x-timer': 'S1441483122.768784,VS0,VE144',
+33 silly get     vary: 'Accept' } ]
+34 verbose get saving minifier to /Users/Judy/.npm/registry.npmjs.org/minifier/.cache.json
+35 silly addNameRange number 2 { name: 'minifier', range: '*', hasData: true }
+36 silly addNameRange versions [ 'minifier',
+36 silly addNameRange   [ '0.4.1',
+36 silly addNameRange     '0.4.2',
+36 silly addNameRange     '0.4.3',
+36 silly addNameRange     '0.4.4',
+36 silly addNameRange     '0.4.5',
+36 silly addNameRange     '0.4.6',
+36 silly addNameRange     '0.5.0',
+36 silly addNameRange     '0.6.0',
+36 silly addNameRange     '0.6.1',
+36 silly addNameRange     '0.6.2',
+36 silly addNameRange     '0.7.0',
+36 silly addNameRange     '0.7.1' ] ]
+37 silly addNamed minifier@0.7.1
+38 verbose addNamed "0.7.1" is a plain semver version for minifier
+39 silly mapToRegistry name minifier
+40 silly mapToRegistry using default registry
+41 silly mapToRegistry registry https://registry.npmjs.org/
+42 silly mapToRegistry uri https://registry.npmjs.org/minifier
+43 verbose addRemoteTarball https://registry.npmjs.org/minifier/-/minifier-0.7.1.tgz not in flight; adding
+44 verbose addRemoteTarball [ 'https://registry.npmjs.org/minifier/-/minifier-0.7.1.tgz',
+44 verbose addRemoteTarball   'c5e4d98cb15b9c802cb9e8fbf207d520cd107105' ]
+45 info retry fetch attempt 1 at 13:58:43
+46 info attempt registry request try #1 at 13:58:43
+47 http fetch GET https://registry.npmjs.org/minifier/-/minifier-0.7.1.tgz
+48 http fetch 200 https://registry.npmjs.org/minifier/-/minifier-0.7.1.tgz
+49 silly fetchAndShaCheck shasum c5e4d98cb15b9c802cb9e8fbf207d520cd107105
+50 verbose addTmpTarball /var/folders/cb/0h23k1pd2cs4r_qfbkqd7xsc0000gn/T/npm-14844-7deb9f79/registry.npmjs.org/minifier/-/minifier-0.7.1.tgz not in flight; adding
+51 verbose addTmpTarball already have metadata; skipping unpack for minifier@0.7.1
+52 silly cache afterAdd minifier@0.7.1
+53 verbose afterAdd /Users/Judy/.npm/minifier/0.7.1/package/package.json not in flight; writing
+54 verbose afterAdd /Users/Judy/.npm/minifier/0.7.1/package/package.json written
+55 verbose stack Error: ENOENT, open '/Users/Judy/workspace/angular_exercises/Unit-2/unit_solutions/Unit 5/[-g]'
+55 verbose stack     at Error (native)
+56 verbose cwd /Users/Judy/workspace/angular_exercises/Unit-2/unit_solutions/Unit 5
+57 error Darwin 14.5.0
+58 error argv "node" "/usr/local/bin/npm" "install" "[-g]" "minifier"
+59 error node v0.12.2
+60 error npm  v2.13.5
+61 error path /Users/Judy/workspace/angular_exercises/Unit-2/unit_solutions/Unit 5/[-g]
+62 error code ENOENT
+63 error errno -2
+64 error enoent ENOENT, open '/Users/Judy/workspace/angular_exercises/Unit-2/unit_solutions/Unit 5/[-g]'
+64 error enoent This is most likely not a problem with npm itself
+64 error enoent and is related to npm not being able to find a file.
+65 verbose exit [ -2, true ]

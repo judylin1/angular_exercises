@@ -1,0 +1,81 @@
+extends layout
+
+block content
+  header
+    nav.navbar.navbar-default
+      .container-fluid.container-header
+        .navbar-header
+          a.navbar-brand(href='#') Reddit Clone
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='#' ng-click="postForm()")
+                i.fa.fa-plus  
+                |  Submit Post
+          form.navbar-form.navbar-left(role='search')
+            .form-group
+              input.form-control(type='text' ng-model="search.title" placeholder='Search')
+          ul.nav.navbar-nav
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown' role='button')
+                | {{sortOrder}} 
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='#' ng-click='orderVotes()') Votes
+                li
+                  a(href='#' ng-click='orderDates()') Date
+                li
+                  a(href='#' ng-click='orderTitles()') Title
+    .container
+      form#post-form(name="userForm" ng-hide="newPost == false" ng-submit="submitForm(userForm.$valid, title, author, url, description)")
+        .form-group
+            label(for="title") Title
+            input#title.form-control(type='text' name="title" ng-model='title' required)
+            label(for="author") Author
+            input#author.form-control(type='text' name="author" ng-model='author' required)
+            label(for="url") Image URL
+            input#url.form-control(type='url' name="url" ng-model='url' required)
+            label(for="description") Description
+            input#description.form-control(type='text' name="description" ng-model='description' required)
+            button.btn(type='submit' ng-click='createPost()' ng-disabled="userForm.$invalid") Submit
+  .container
+    div.post(ng-repeat="post in posts | filter:search | orderBy: order: orderDir")
+      div.pic
+        img(ng-src="{{post.url}}")
+      div.content
+        header
+          h1 {{post.title}}
+          span    
+          i.fa.fa-arrow-up(ng-click="upVote()") 
+          |  
+          i.fa.fa-arrow-down(ng-click="downVote()") 
+          span.bold(ng-class="{green: post.votes > 0, black: post.votes == 0, red: post.votes < 0}")  {{post.votes}}
+        main
+          p.right By {{post.author}}
+          .clear
+          p {{post.description}}
+        footer
+          .post-footer
+            i.fa.fa-calendar
+            |  
+            span.date(am-time-ago="{post.date}") {{post.date | amCalendar}}
+            span.pipe    
+            i.fa.fa-comment(ng-click='commentShow()')
+              span
+                ng-pluralize(count="post.comments.length" when="{0: ' No Comments ', 1: ' 1 comment ', other: ' {} comments '}")
+            |   
+            i.fa.fa-pencil(ng-click="commentFormShow()")
+              span  Add Comment 
+        div.comment(ng-hide="showCommentForm == false")
+          form.form-inline(name="commentForm" ng-submit="submitForm(commentForm.$valid, name, comment)")
+            .form-group
+                label(for='name') Name 
+                input.form-control.input-sm(type='text' name='name' ng-model="comments.name" required)
+                label(for='comment') Comment 
+                input.form-control.input-sm(type='text' name='content' ng-model="comments.content" required)
+                button.btn.btn-default.btn-sm(type='submit' ng-click="postComment()" ng-disabled="commentForm.$invalid") Post
+        div.space(ng-hide="comments == false")
+          div.space(ng-repeat="comment in post.comments")
+            span.bold {{comment.name}}: 
+            span.content {{comment.content}}

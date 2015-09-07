@@ -57,3 +57,35 @@ Ans: Yes.
 Ans: The same order that it is in in the array.
 5. How does ng-repeat handle duplicate data?  
 Ans: It doesn't. It breaks.
+
+# Unit 2
+
+### A New Structure
+1. What are possible issues with this new file structure?  
+Ans: Unnecessary files. For example, in the Reddit app, directives, filters, and services are all empty.
+2. When thinking about extending the single responsibility principle to the app structure, what are some other ways that the app could be structured?  
+Ans: At this current moment, I would do away with directives, filters, and services because they're empty.
+3. What are the differences between serving files from an http server and from the file system?  It seemed to work fine with just `open index.html` in the browser...  
+Ans: If you have multiple pages, it's easier to see/load using a server rather than have to open each html file.
+4. Reflecting on the new structure and thinking back to lesson 1 - is Angular an MVC framework? How does the app structure support/disprove that?  
+Ans: Yes. In this new structure, you can clearly see a controllers file.
+
+### Routing
+1. Why isn't `ngRoute` part of Angular core?  Name at least 2 other Angular modules we could use.  
+Ans: ngAnimate, ngCookies, ngMessages.
+2. Compare and contrast client-side routing with server-side routing.  
+Ans:
+3. Aside from route definitions, what else can go in a `.config()`?  
+Ans:
+4. What is `$rootScope`?  
+Ans: Every app has a single root scope where all other scopes descend from. Scopes provide separation between the model and the view.
+5. What is the `$routeChangeSuccess` event?  
+Ans:
+
+### HTTP Service
+1. What is a service?  Is there a Ruby or JavaScript equivalent to Angular services?  
+Ans: Objects that contain some code that can be shared across the app.
+2. Explain in as much detail as possible what happens under the hood of `$http.get()`.  
+Ans: $http.get() retrieves data from the url and displays the resulting data on the page. $http.get() returns a promise then the callback is called async when the response is available. 
+3. What is `$q` and how does it relate to `$http`?  
+Ans: A service that helps you run functions async and use their return values when they are done processing.

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app='tea'>
+  <head>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js'></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+    <script type='text/javascript' src='js/controllers.js'></script>
+    <script type='text/javascript' src='js/directives.js'></script>
+    <script type='text/javascript' src='js/filters.js'></script>
+    <script type='text/javascript' src='js/services.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel='stylesheet' href='style.css'>
+    <title>MEAN Tea</title>
+    <base href='/'>
+  </head>
+  <body ng-controller='homeController'>
+    <div class='container' id='padbottom'>
+      <div class='col-md-12' id="guaranteed">
+        Guaranteed Awesome!
+      </div>
+      <div class='col-md-12' id='orange'>
+        <strong><i>Welcome to MEAN Tea!</i></strong>
+      </div>
+      <div class='col-md-12'>
+        <span class='span'>
+          <a href='/'>Home</a>
+          <a href='#'>About</a>
+          <a href='#'>Contact</a>
+        </span>
+      </div>
+    </div>
+    <div ng-view></div>
+  </body>
+</html>

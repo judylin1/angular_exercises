@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='portfolio'>
+  <head>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js'></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+    <script type='text/javascript' src='js/controllers.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel='stylesheet' href='style.css'>
+    <title>Angular Portfolio</title>
+  </head>
+  <body>
+    <div class="container" ng-controller='NavController'>
+      <div class="row">
+        <div class="col-sm-3">
+          <a href='#' ng-click='setActive("/")'><h2>Portfolio</h2></a>
+        </div>
+        <ul class="col-sm-9">
+          <a href="#/projects" ng-click='setActive("/projects")'><li>Projects</li></a>
+          <a href="#/resume" ng-click='setActive("/resume")'><li>Resume</li></a>
+          <a href="#/bio" ng-click='setActive("/bio")'><li>Bio</li></a>
+        </ul>
+      </div>
+    </div>
+
+    <div ng-view></div>
+
+    <h4>FOOTER GOES HERE</h4>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+.container {
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+h2{
+  color: #666;
+  font-size: 20px;
+  font-family: "Verdana";
+  text-transform: uppercase;
+  float: left;
+}
+
+ul{
+  list-style: none;
+  margin-top: 23px;
+  text-align: right;
+}
+
+li{
+  display: inline;
+  margin-right: 20px;
+  color: #666;
+  font-family: "Verdana";
+}
+
+a:hover{
+  text-decoration: none;
+  color: black;
+}

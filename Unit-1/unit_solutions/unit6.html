@@ -44,27 +44,27 @@
     <h1>Contact List Exercise</h1>
     <div ng-controller="contacts">
       <label for="name">Name</label>
-      <input type="text" id="name" ng-model="name">
+      <input type="text" id="name" ng-model="name"></input>
       <label for="email">Email</label>
-      <input type="text" id="email" ng-model="email">
+      <input type="text" id="email" ng-model="email"></input>
       <label for="phone">Phone</label>
-      <input type="text" id="phone" ng-model="phone">
+      <input type="text" id="phone" ng-model="phone"></input>
       <button class='add' ng-click='addContact(name, email, phone)'>Add Contact</button>
-      <br><br>
+      <br>
       <label for="Search">Search</label>
       <input type="text" id="search" ng-model="search">
-      <br><br>
+      <br>
       <table>
         <thead>
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
         </thead>
+        <tbody>
           <tr ng-repeat="contact in contacts | filter:search" ng-mouseover='show()'>
             <td>{{contact.name}}</td>
             <td>{{contact.email}}</td>
             <td>{{contact.phone}}</td>
-        <tbody>
         </tbody>
       </table>
     </div>
