@@ -8,7 +8,7 @@ Name at least 5 built in directives you've used so far.
 
 ### Simple Custom Directive
 
-We are going to make a simple directive that just puts some html on the page.  This is not a great use for directives, but we'll get to more complicated examples later. 
+We are going to make a simple directive that just puts some html on the page.  This is not a great use for directives, but we'll get to more complicated examples later.
 
 `app.js`:
 
@@ -40,14 +40,14 @@ Our `index.html` would look like this:
 A few things to notice with our new custom directive:
 
 1. Our directive is called `gsAngularLogo` but in the html we use it by calling it `gs-agnular-logo`.
-2. We prefixed our directive name with gs (galvanize school).  Acording to angular docs, adding a prefix is a good practice so that the chance of a name collision is minimized.
+2. We prefixed our directive name with gs (galvanize school).  According to angular docs, adding a prefix is a good practice so that the chance of a name collision is minimized.
 3. The built in directives we've seen so far are called in the view by adding them as attributes of an html tag.  For example: `<html ng-app="simpleDirectiveApp">`.  The `ng-app` directive is an attribute of the html tag.
 
 These observations lead to a few topics:
 
 **Normalization of Html**
 
-When angular looks over your html document, it goes through a process called normalization.  The process essentially goes over each tag, looks for angular directives, and then normalizes the name from dash-delimited name to a camel case name.  For example, angular translates `gs-angular-logo` into `gsAngularLogo`.  This process is necessary becuase dash delimited names are not the only possiblity for directives.  For example, `gs_angular_logo` would also be valid.
+When angular looks over your html document, it goes through a process called normalization.  The process essentially goes over each tag, looks for angular directives, and then normalizes the name from dash-delimited name to a camel case name.  For example, angular translates `gs-angular-logo` into `gsAngularLogo`.  This process is necessary because dash delimited names are not the only possiblity for directives.  For example, `gs_angular_logo` would also be valid.
 
 **EXERCISE**
 

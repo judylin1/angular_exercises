@@ -1,0 +1,96 @@
+body {
+  color: #666;
+}
+
+.container {
+  border: 3px solid #3f3f3f;
+  width: 500px;
+  height: 100vh;
+}
+
+a {
+  color: #666;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.content {
+  display: inline-block;
+  max-width: 99%;
+  word-wrap: break-word;
+}
+
+.edit {
+  display: inline-block;
+  margin-top: -1em;
+  margin-bottom: -2em;
+}
+
+#cancel {
+  background-color: #7e7e7e;
+  color: white;
+}
+
+#fade {
+  color: #d3d3d3;
+}
+
+#fade:hover {
+  text-decoration: none;
+  color: #939393;
+}
+
+h3 {
+  border-bottom: 3px solid grey;
+  padding-bottom: 0.2em;
+}
+
+.form-group {
+  position: fixed;
+  bottom: 0;
+  width: 32.2%;
+}
+
+.message {
+  margin-top: 2em;
+}
+
+.message:first-child {
+  margin-top: 0.5em;
+}
+
+.scroll {
+  overflow: auto;
+  max-height: 55%;
+}
+
+img {
+  float: left;
+  width: 57px;
+}
+
+.right {
+  margin-left: 70px;
+}
+
+input[type='submit'] {
+  border-radius: 5px;
+  border: none;
+  background-color: #e4e4e4;
+  margin-top: 0.5em;
+  width: 6em;
+}
+
+input[type='submit']:hover {
+  background: #d3d3d3;
+}
+
+input[type='text'] {
+  margin-bottom: 1em;
+}
+
+label:first-child {
+  margin-top: 1em;
+}

@@ -1,10 +1,14 @@
-var app = angular.module('tea', ['ngRoute']);
+var app = angular.module("tea", ['ngRoute']);
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider) {
   $routeProvider
-  .when('/', {
-    templateUrl: 'partials/home.html',
-    controller: 'homeController',
-  })
-  $locationProvider.html5Mode(true);
+    .when('/', {
+      templateUrl: 'partials/home.html',
+      controller: 'HomeController'
+    })
+    .when('/checkout', {
+      templateUrl: 'partials/checkout.html',
+      controller: 'CheckoutController'
+    })
+    .otherwise({redirectTo: '/'})
 })

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='tea'>
+<html ng-app='pokemon'>
   <head>
     <meta charset="utf-8">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js'></script>
@@ -12,34 +12,33 @@
     <script type='text/javascript' src='js/services.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>MEAN Tea</title>
-    <base href="/">
+    <title>Pokemon</title>
   </head>
-  <body>
-    <div class="container orange text-center">
-      <b><i>Guaranteed Awesome!</i></b>
-    </div>
-    <div class="container">
-      <div class="row">
-        <h1 class='welcome'><b><i>Welcome to MEAN Tea!</i></b></h1>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="/#/">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <div ng-view></div>
+  <body ng-controller='PokemonController'>
+    <div clas='container'>
+    <h1>Catch'em All!</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Photo</th>
+          <th>Type(s)</th>
+          <th>Moves</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='pokemon in allPokemon'>
+        <td>{{pokemon.data.name}}</td>
+        <td><img src='{{pokemon.imgUrl}}' alt='{{pokemon.imgUrl}}'></td>
+        <td><ul>
+              <li ng-repeat='type in pokemon.data.types'>{{type.name}}</li>
+            </ul></td>
+        <td><ul>
+              <li ng-repeat='move in pokemon.data.moves | limitTo: 6'>{{move.name}}</li>
+            </ul></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
   </body>
 </html>

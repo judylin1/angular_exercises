@@ -1,0 +1,46 @@
+<div ng-controller='CheckoutController'>
+ <div class="container">
+   <div class="row">
+     <h3 style="display: inline-block">My Shopping Bag</h3>
+     <h3 class="pull-right">Order Total: {{orderTotal | currency}}</h3>
+   </div>
+ </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Sub-total</th>
+          </div>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='tea in checkOutTeas | filter:search'>
+          <td id='addwidth'>
+            <h3>{{tea.name}}</h3>
+            <img ng-src="{{tea.imageUrl}}" alt='tea.name'/>
+            <p><b>Caffeine Scale:</b> {{tea.caffeineScale}}</p>
+            <p><b>Ingredients:</b> {{tea.ingredients}}</p>
+            <p><b>Rating:</b> {{tea.rating}}</p>
+          </td>
+          <td>
+            <p ng-hide='edit'>{{tea.count}}</p>
+            <input ng-show='edit' type="number" ng-model='newQuantity'>
+          </td>
+          <td>
+            <p>{{tea.price * tea.count | currency}}</p>
+          </td>
+          <td>
+            <input ng-hide='edit' type="button" value="Edit" class="btn btn-warning" ng-click='editSwitch()'>
+            <input ng-show='edit' type="button" value="Save" class="btn btn-warning" ng-click='updateQuantity(newQuantity, tea._id)'>
+            <input type="button" value="Delete" class="btn btn-danger" ng-click='deleteTea(tea._id)'>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
